@@ -3,429 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DealHunt - Best Amazon Deals Updated 4x Daily</title>
-    <meta name="description" content="Fresh Amazon deals every 6 hours. Verified deals with guarantee. Save 50-80% on electronics, home goods, and more.">
+    <title>ThriftZone - Best Amazon Deals & Loot Offers | Save Up to 80% Daily</title>
+    <meta name="description" content="Discover the best Amazon deals and loot offers on ThriftZone. Save up to 80% on electronics, fashion, home appliances & more. Updated hourly for Indian customers.">
+    <meta name="author" content="ThriftZone">
     
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/components.css">
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="ThriftZone - Best Amazon Deals & Loot Offers | Save Up to 80%">
+    <meta property="og:description" content="Discover the best Amazon deals and loot offers on ThriftZone. Save up to 80% on electronics, fashion, home appliances & more. Updated hourly for Indian customers.">
+    <meta property="og:type" content="website">
     
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@thriftzone">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Loading Spinner -->
-    <div id="loading-spinner" class="loading-spinner">
-        <div class="spinner"></div>
-        <p>Loading fresh deals...</p>
+    <!-- Deals Notification Bar -->
+    <div id="deals-notification-bar" class="deals-notification-bar">
+        <div class="container">
+            <div class="notification-content">
+                <div class="notification-text">
+                    <span class="trending-icon">📈</span>
+                    <span class="font-medium">
+                        🔥 FLASH SALE: Extra 15% off on all electronics | Use code: FLASH15 | 
+                        <span class="font-bold ml-1">Ends in 2h 45m</span>
+                    </span>
+                </div>
+                <button id="close-notification" class="close-btn">✕</button>
+            </div>
+        </div>
     </div>
 
     <!-- Header -->
     <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <!-- Logo -->
-                <div class="nav-logo">
-                    <img src="images/logo.png" alt="DealHunt Logo">
-                    <span class="logo-text">DealHunt</span>
+        <div class="container">
+            <!-- Top bar -->
+            <div class="top-bar">
+                <div class="top-bar-left">
+                    <span>📞 1800-123-4567</span>
+                    <span>📧 support@thriftzone.com</span>
                 </div>
-
-                <!-- Navigation Menu -->
-                <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#deals" class="nav-link">Hot Deals</a></li>
-                    <li><a href="#categories" class="nav-link">Categories</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                </ul>
-
-                <!-- User Actions -->
-                <div class="nav-actions">
-                    <button class="notification-btn" id="notification-btn">
-                        <i class="fas fa-bell"></i>
-                        <span class="notification-badge">3</span>
-                    </button>
-                    <button class="login-btn" id="login-btn">Login</button>
-                    <button class="signup-btn" id="signup-btn">Sign Up</button>
-                </div>
-
-                <!-- Mobile Menu Toggle -->
-                <div class="hamburger" id="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="top-bar-right">
+                    <span>🚚 Free Shipping on orders above ₹999</span>
+                    <span>🔄 Easy Returns</span>
                 </div>
             </div>
-        </nav>
+
+            <!-- Main header -->
+            <div class="main-header">
+                <!-- Logo -->
+                <div class="logo-section">
+                    <h1 class="logo">ThriftZone</h1>
+                    <span class="deals-badge">DEALS</span>
+                </div>
+
+                <!-- Search bar -->
+                <div class="search-section">
+                    <div class="search-container">
+                        <span class="search-icon">🔍</span>
+                        <input 
+                            type="text" 
+                            placeholder="Search for products, brands and more..."
+                            class="search-input"
+                            id="search-input"
+                        >
+                    </div>
+                </div>
+
+                <!-- Action buttons -->
+                <div class="actions">
+                    <button class="action-btn">
+                        <span class="icon">👤</span>
+                        <span class="text">Account</span>
+                    </button>
+                    <button class="action-btn">
+                        <span class="icon">❤️</span>
+                        <span class="text">Wishlist</span>
+                    </button>
+                    <button class="action-btn cart-btn">
+                        <span class="icon">🛒</span>
+                        <span class="text">Cart</span>
+                        <span class="cart-count">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="navigation">
+                <div class="nav-content">
+                    <div class="nav-left">
+                        <button class="categories-btn">
+                            <span class="menu-icon">☰</span>
+                            All Categories
+                        </button>
+                        <div class="nav-links">
+                            <a href="#">Electronics</a>
+                            <a href="#">Mobile & Tablets</a>
+                            <a href="#">Fashion</a>
+                            <a href="#">Home & Kitchen</a>
+                            <a href="#">Books</a>
+                            <a href="#">Sports</a>
+                        </div>
+                    </div>
+                    <div class="nav-right">
+                        <span class="live-deals">🔥 Live Deals</span>
+                        <span class="today-special">Today's Special</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
-            <!-- Banner Slides -->
-            <div class="hero-slider">
-                <div class="hero-slide active">
-                    <div class="hero-content">
-                        <h1 class="hero-title">🔥 Fresh Amazon Deals Every 6 Hours</h1>
-                        <p class="hero-subtitle">Join 500,000+ smart shoppers saving $1,200+ yearly</p>
-                        <div class="hero-features">
-                            <span class="hero-feature">✅ Verified deals updated 4x daily</span>
-                            <span class="hero-feature">✅ Average user saves $67 per purchase</span>
-                            <span class="hero-feature">✅ Deal guarantee or money back</span>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <!-- Text content -->
+                    <div class="hero-text">
+                        <div class="hero-badge">🏷️ MEGA DEALS LIVE</div>
+                        <h1 class="hero-title">
+                            Unbeatable<br>
+                            <span class="accent-text">Deals</span> Await!
+                        </h1>
+                        
+                        <p class="hero-description">
+                            Discover the best loot deals from Amazon. Save up to 80% on top brands. 
+                            Limited time offers - grab them before they're gone!
+                        </p>
+
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary">🛍️ Shop Now</button>
+                            <button class="btn btn-outline">🔥 Today's Deals</button>
                         </div>
-                        <button class="hero-cta-btn" id="hero-cta">Get Today's Hot Deals Free</button>
-                        <div class="hero-trust">
-                            <span class="trust-rating">★★★★★ 4.8/5 from 12,000+ reviews</span>
+
+                        <div class="hero-stats">
+                            <div class="stat">
+                                <div class="stat-number">5000+</div>
+                                <div class="stat-label">Happy Customers</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">₹50L+</div>
+                                <div class="stat-label">Savings Generated</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Deal Updates</div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Hero image -->
                     <div class="hero-image">
-                        <img src="images/hero-deals.png" alt="Amazon Deals">
+                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1226&q=80" 
+                             alt="Best Deals on Electronics" 
+                             class="hero-img">
+                        <div class="hero-badge-overlay">UP TO 80% OFF</div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Next Update Countdown -->
-            <div class="update-countdown">
-                <span class="countdown-label">Next deal update in:</span>
-                <div class="countdown-timer" id="countdown-timer">
-                    <span id="hours">02</span>:
-                    <span id="minutes">14</span>:
-                    <span id="seconds">35</span>
+        <!-- Categories Section -->
+        <section class="categories-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">🛍️ Shop by Categories</h2>
+                    <p class="section-description">Explore thousands of deals across all major categories</p>
+                </div>
+
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon mobile">📱</div>
+                        <h3 class="category-name">Mobiles & Tablets</h3>
+                        <p class="category-deals">1200+ deals</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon electronics">💻</div>
+                        <h3 class="category-name">Electronics</h3>
+                        <p class="category-deals">850+ deals</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon fashion">👕</div>
+                        <h3 class="category-name">Fashion</h3>
+                        <p class="category-deals">2000+ deals</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon home">🏠</div>
+                        <h3 class="category-name">Home & Kitchen</h3>
+                        <p class="category-deals">950+ deals</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon audio">🎧</div>
+                        <h3 class="category-name">Audio & Music</h3>
+                        <p class="category-deals">450+ deals</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon books">📚</div>
+                        <h3 class="category-name">Books</h3>
+                        <p class="category-deals">300+ deals</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon gaming">🎮</div>
+                        <h3 class="category-name">Gaming</h3>
+                        <p class="category-deals">200+ deals</p>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon camera">📷</div>
+                        <h3 class="category-name">Cameras</h3>
+                        <p class="category-deals">150+ deals</p>
+                    </div>
+                </div>
+
+                <div class="section-footer">
+                    <button class="btn btn-gradient">View All Categories</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Quick Stats -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-item">
-                <div class="stat-number" id="active-deals">1,247</div>
-                <div class="stat-label">Active Deals</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="total-savings">$2.4M</div>
-                <div class="stat-label">Total Saved</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="happy-users">500K+</div>
-                <div class="stat-label">Happy Users</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number" id="avg-discount">67%</div>
-                <div class="stat-label">Avg Discount</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Deals Filter Section -->
-    <section class="filters-section" id="deals">
-        <div class="filters-container">
-            <h2 class="section-title">Find Your Perfect Deal</h2>
-            
-            <!-- Search Bar -->
-            <div class="search-container">
-                <input type="text" id="deal-search" class="search-input" placeholder="Search for deals...">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
-            </div>
-
-            <!-- Filter Options -->
-            <div class="filters-row">
-                <!-- Category Filter -->
-                <div class="filter-group">
-                    <label class="filter-label">Category:</label>
-                    <select id="category-filter" class="filter-select">
-                        <option value="">All Categories</option>
-                        <option value="electronics">Electronics</option>
-                        <option value="home">Home & Garden</option>
-                        <option value="fashion">Fashion</option>
-                        <option value="sports">Sports & Outdoors</option>
-                        <option value="books">Books</option>
-                        <option value="health">Health & Beauty</option>
-                    </select>
+        <!-- Products Section -->
+        <section class="products-section">
+            <div class="container">
+                <!-- Section Header -->
+                <div class="section-header">
+                    <h2 class="section-title">🔥 Today's Hottest Deals</h2>
+                    <p class="section-description">
+                        Hand-picked deals updated every hour. Get the best prices on top-rated products before they run out!
+                    </p>
                 </div>
 
-                <!-- Discount Filter -->
-                <div class="filter-group">
-                    <label class="filter-label">Min Discount:</label>
-                    <select id="discount-filter" class="filter-select">
-                        <option value="">Any Discount</option>
-                        <option value="20">20% or more</option>
-                        <option value="50">50% or more</option>
-                        <option value="70">70% or more</option>
-                    </select>
+                <!-- Deal Stats -->
+                <div class="deal-stats">
+                    <div class="stat">
+                        <div class="stat-number primary-color">6</div>
+                        <div class="stat-label">Active Deals</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number accent-color">₹2.5L+</div>
+                        <div class="stat-label">Total Savings</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number success-color">24h</div>
+                        <div class="stat-label">Deal Refresh</div>
+                    </div>
                 </div>
 
-                <!-- Price Range Filter -->
-                <div class="filter-group">
-                    <label class="filter-label">Price Range:</label>
-                    <select id="price-filter" class="filter-select">
-                        <option value="">Any Price</option>
-                        <option value="0-25">Under $25</option>
-                        <option value="25-50">$25 - $50</option>
-                        <option value="50-100">$50 - $100</option>
-                        <option value="100-999">Over $100</option>
-                    </select>
+                <!-- Product Grid -->
+                <div class="product-grid" id="product-grid">
+                    <!-- Products will be dynamically loaded here -->
                 </div>
 
-                <!-- Sort Options -->
-                <div class="filter-group">
-                    <label class="filter-label">Sort by:</label>
-                    <select id="sort-filter" class="filter-select">
-                        <option value="newest">Newest First</option>
-                        <option value="discount">Highest Discount</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                        <option value="popular">Most Popular</option>
-                    </select>
-                </div>
-
-                <!-- Clear Filters -->
-                <button class="clear-filters-btn" id="clear-filters">Clear All</button>
-            </div>
-
-            <!-- Active Filters Display -->
-            <div class="active-filters" id="active-filters">
-                <!-- Dynamically populated -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Deals Grid Section -->
-    <section class="deals-section">
-        <div class="deals-container">
-            <!-- Deals Grid -->
-            <div class="deals-grid" id="deals-grid">
-                <!-- Deal cards will be dynamically populated here -->
-            </div>
-
-            <!-- Load More Button -->
-            <div class="load-more-container">
-                <button class="load-more-btn" id="load-more-btn">Load More Deals</button>
-            </div>
-
-            <!-- No Deals Found -->
-            <div class="no-deals" id="no-deals" style="display: none;">
-                <i class="fas fa-search"></i>
-                <h3>No deals found</h3>
-                <p>Try adjusting your filters or search terms</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="categories-section" id="categories">
-        <div class="categories-container">
-            <h2 class="section-title">Shop by Category</h2>
-            <div class="categories-grid">
-                <div class="category-card" data-category="electronics">
-                    <i class="fas fa-laptop"></i>
-                    <h3>Electronics</h3>
-                    <span class="deal-count">243 deals</span>
-                </div>
-                <div class="category-card" data-category="home">
-                    <i class="fas fa-home"></i>
-                    <h3>Home & Garden</h3>
-                    <span class="deal-count">189 deals</span>
-                </div>
-                <div class="category-card" data-category="fashion">
-                    <i class="fas fa-tshirt"></i>
-                    <h3>Fashion</h3>
-                    <span class="deal-count">156 deals</span>
-                </div>
-                <div class="category-card" data-category="sports">
-                    <i class="fas fa-dumbbell"></i>
-                    <h3>Sports & Outdoors</h3>
-                    <span class="deal-count">97 deals</span>
-                </div>
-                <div class="category-card" data-category="books">
-                    <i class="fas fa-book"></i>
-                    <h3>Books</h3>
-                    <span class="deal-count">78 deals</span>
-                </div>
-                <div class="category-card" data-category="health">
-                    <i class="fas fa-heart"></i>
-                    <h3>Health & Beauty</h3>
-                    <span class="deal-count">134 deals</span>
+                <!-- Load More Button -->
+                <div class="section-footer">
+                    <button class="btn btn-gradient" id="load-more-btn">🔄 Load More Deals</button>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="features-container">
-            <h2 class="section-title">Why Choose DealHunt?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Verified Deals Only</h3>
-                    <p>Every deal manually verified. Fake deals guarantee refund policy.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>4x Daily Updates</h3>
-                    <p>Fresh deals at 9 AM, 1 PM, 6 PM, and 9 PM daily. Never miss a deal.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Transparent Earnings</h3>
-                    <p>We show exactly how much we earn per click. No hidden costs for you.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Mobile First</h3>
-                    <p>Optimized for mobile shopping with instant notifications.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Signup -->
-    <section class="newsletter-section">
-        <div class="newsletter-container">
-            <h2>Never Miss a Hot Deal</h2>
-            <p>Get personalized deal alerts delivered to your inbox</p>
-            <form class="newsletter-form" id="newsletter-form">
-                <input type="email" class="newsletter-input" placeholder="Enter your email" required>
-                <button type="submit" class="newsletter-btn">Get Deal Alerts</button>
-            </form>
-            <div class="newsletter-success" id="newsletter-success" style="display: none;">
-                <i class="fas fa-check-circle"></i>
-                <span>Thank you! You'll receive deals soon.</span>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-container">
+        <div class="container">
+            <!-- Main footer content -->
             <div class="footer-content">
+                <!-- Company Info -->
                 <div class="footer-section">
-                    <h3>DealHunt</h3>
-                    <p>The most trusted Amazon deals aggregator. Fresh deals, verified savings, transparent earnings.</p>
+                    <div class="company-info">
+                        <h3 class="company-name">ThriftZone</h3>
+                        <p class="company-description">
+                            Your ultimate destination for the best Amazon deals. Save more, shop smarter.
+                        </p>
+                    </div>
+                    
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">📺</a>
                     </div>
                 </div>
+
+                <!-- Quick Links -->
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#deals">Today's Deals</a></li>
-                        <li><a href="#categories">Categories</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Today's Deals</a></li>
+                        <li><a href="#">Electronics</a></li>
+                        <li><a href="#">Fashion</a></li>
+                        <li><a href="#">Home & Kitchen</a></li>
+                        <li><a href="#">Mobile & Tablets</a></li>
                     </ul>
                 </div>
+
+                <!-- Support -->
                 <div class="footer-section">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#disclosure">Affiliate Disclosure</a></li>
-                        <li><a href="#guarantee">Deal Guarantee</a></li>
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
+
+                <!-- Contact Info -->
                 <div class="footer-section">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#help">Help Center</a></li>
-                        <li><a href="#faq">FAQ</a></li>
-                        <li><a href="#report">Report a Deal</a></li>
-                        <li><a href="#feedback">Feedback</a></li>
-                    </ul>
+                    <h4 class="footer-title">Get in Touch</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <span>1800-123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>support@thriftzone.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <span>Mumbai, Maharashtra, India</span>
+                        </div>
+                    </div>
+
+                    <div class="app-promo">
+                        <p class="app-title">📱 Get our mobile app</p>
+                        <p class="app-description">Download for exclusive mobile-only deals!</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Bottom bar -->
             <div class="footer-bottom">
-                <p>&copy; 2024 DealHunt. All rights reserved. | Amazon affiliate disclosure: We earn from qualifying purchases.</p>
+                <div class="footer-bottom-content">
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Affiliate Disclosure</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                    <div class="copyright">
+                        © 2024 ThriftZone. All rights reserved.
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Deal Card Template (Hidden) -->
-    <template id="deal-card-template">
-        <div class="deal-card">
-            <div class="deal-image">
-                <img src="" alt="" class="deal-img">
-                <div class="deal-badge">
-                    <span class="discount-badge"></span>
-                </div>
-                <button class="save-deal-btn" title="Save Deal">
-                    <i class="far fa-heart"></i>
-                </button>
-            </div>
-            <div class="deal-content">
-                <h3 class="deal-title"></h3>
-                <div class="deal-pricing">
-                    <span class="original-price"></span>
-                    <span class="current-price"></span>
-                    <span class="savings-amount"></span>
-                </div>
-                <div class="deal-meta">
-                    <span class="deal-score"></span>
-                    <span class="deal-rating"></span>
-                    <span class="deal-verified"></span>
-                </div>
-                <div class="deal-actions">
-                    <button class="deal-btn primary">Get Deal</button>
-                    <button class="deal-btn secondary">View Details</button>
-                </div>
-                <div class="deal-footer">
-                    <span class="deal-timer"></span>
-                    <span class="deal-commission"></span>
-                </div>
-            </div>
-        </div>
-    </template>
-
-    <!-- Login Modal -->
-    <div class="modal" id="login-modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2>Login to DealHunt</h2>
-            <form class="auth-form" id="login-form">
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit">Login</button>
-            </form>
-            <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
-        </div>
-    </div>
-
-    <!-- Signup Modal -->
-    <div class="modal" id="signup-modal">
-        <div class="modal-content">
-            <span class="modal-close">&times;</span>
-            <h2>Join DealHunt</h2>
-            <form class="auth-form" id="signup-form">
-                <input type="text" placeholder="First Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit">Sign Up</button>
-            </form>
-            <p>Already have an account? <a href="#" id="show-login">Login</a></p>
-        </div>
-    </div>
-
-    <!-- Notification Toast -->
-    <div class="toast" id="toast">
-        <div class="toast-content">
-            <span class="toast-message"></span>
-            <button class="toast-close">&times;</button>
-        </div>
-    </div>
-
-    <!-- JavaScript Files -->
-    <script src="js/utils.js"></script>
-    <script src="js/deals.js"></script>
-    <script src="js/filters.js"></script>
-    <script src="js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
